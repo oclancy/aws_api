@@ -31,7 +31,7 @@ jobs:
         aws-region: ${{env.AWS_REGION}}
     - run: ls
     # sam build 
-    - run: sam build --use-container -t TestFunc/template.yml
+    - run: sam build --use-container -t TestFunc/template.yaml
 
 # Run Unit tests- Specify unit tests here 
 
