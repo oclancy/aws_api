@@ -9,7 +9,7 @@ Globals:
     Timeout: 100
 
 Resources:
-  TESTFUNC2:
+  TESTFUNC:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       Description: A simple example includes a .NET Core WebAPI App with DynamoDB table.
@@ -17,19 +17,6 @@ Resources:
       Handler: TestFunc::TestFunc.Function::FunctionHandler
       Runtime: dotnet6
       MemorySize: 1024
-      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
-        Variables:
-          SAMPLE_TABLE: !Ref SampleTable
-      Policies:
-        # Give Create/Read/Update/Delete Permissions to the SampleTable
-        - DynamoDBCrudPolicy:
-            TableName: !Ref SampleTable
-      Events:
-        HelloWorld:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-          Properties:
-            Path: /hello
-            Method: get
 
 Outputs:
   WebEndpoint:
