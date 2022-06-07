@@ -19,6 +19,9 @@ Resources:
       MemorySize: 1024
 
 Outputs:
-  WebEndpoint:
-    Description: "API Gateway endpoint URL"
-    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/"
+  TESTFUNC:
+    Description: "TESTFUNC Lambda Function ARN"
+    Value: !GetAtt TESTFUNC.Arn
+  TESTFUNCIamRole:
+    Description: "Implicit IAM Role created for TESTFUNC function"
+    Value: !GetAtt TESTFUNC.Arn
