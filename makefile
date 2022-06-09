@@ -18,3 +18,6 @@ validate:
 
 plan:
 	terraform -chdir=./deploy/ plan -var="lambda_function_name=${LAMBDA}"  -out plan.out -var-file="${ENV}.tfvars"
+
+apply:
+	terraform -chdir=./deploy/ apply plan.out
